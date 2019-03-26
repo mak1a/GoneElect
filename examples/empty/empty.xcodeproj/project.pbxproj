@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		207396ED224AAF85008ADD4B /* Title.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207396EB224AAF85008ADD4B /* Title.cpp */; };
+		207396F0224AB249008ADD4B /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207396EE224AB249008ADD4B /* Game.cpp */; };
+		207396F3224AB390008ADD4B /* Result.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207396F1224AB390008ADD4B /* Result.cpp */; };
 		2C064482209C39FF004CBA1B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2C06447B209C39FF004CBA1B /* LICENSE */; };
 		2C064483209C39FF004CBA1B /* lopencv_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C06447C209C39FF004CBA1B /* lopencv_core.a */; };
 		2C064484209C39FF004CBA1B /* lopencv_imgcodecs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C06447D209C39FF004CBA1B /* lopencv_imgcodecs.a */; };
@@ -36,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		207396E9224AAE11008ADD4B /* GameInfo.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameInfo.hpp; sourceTree = "<group>"; };
+		207396EB224AAF85008ADD4B /* Title.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Title.cpp; sourceTree = "<group>"; };
+		207396EC224AAF85008ADD4B /* title.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = title.hpp; sourceTree = "<group>"; };
+		207396EE224AB249008ADD4B /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		207396EF224AB249008ADD4B /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
+		207396F1224AB390008ADD4B /* Result.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Result.cpp; sourceTree = "<group>"; };
+		207396F2224AB390008ADD4B /* Result.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Result.hpp; sourceTree = "<group>"; };
 		2C064463209C395A004CBA1B /* lopencv_imgcodecs.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lopencv_imgcodecs.a; path = ../../lib/macOS/opencv/lopencv_imgcodecs.a; sourceTree = "<group>"; };
 		2C064464209C395A004CBA1B /* lopencv_objdetect.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lopencv_objdetect.a; path = ../../lib/macOS/opencv/lopencv_objdetect.a; sourceTree = "<group>"; };
 		2C064465209C395A004CBA1B /* lopencv_videoio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lopencv_videoio.a; path = ../../lib/macOS/opencv/lopencv_videoio.a; sourceTree = "<group>"; };
@@ -155,6 +165,13 @@
 			isa = PBXGroup;
 			children = (
 				2C1778991CE0AA7C00BB8AD0 /* Main.cpp */,
+				207396E9224AAE11008ADD4B /* GameInfo.hpp */,
+				207396EB224AAF85008ADD4B /* Title.cpp */,
+				207396EC224AAF85008ADD4B /* title.hpp */,
+				207396EE224AB249008ADD4B /* Game.cpp */,
+				207396EF224AB249008ADD4B /* Game.hpp */,
+				207396F1224AB390008ADD4B /* Result.cpp */,
+				207396F2224AB390008ADD4B /* Result.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -348,6 +365,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				207396F0224AB249008ADD4B /* Game.cpp in Sources */,
+				207396ED224AAF85008ADD4B /* Title.cpp in Sources */,
+				207396F3224AB390008ADD4B /* Result.cpp in Sources */,
 				2C17789A1CE0AA7C00BB8AD0 /* Main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
