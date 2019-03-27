@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		202F2D1B224BE1C5000D464A /* BackgroundScape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 202F2D19224BE1C5000D464A /* BackgroundScape.cpp */; };
 		207396ED224AAF85008ADD4B /* Title.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207396EB224AAF85008ADD4B /* Title.cpp */; };
 		207396F0224AB249008ADD4B /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207396EE224AB249008ADD4B /* Game.cpp */; };
 		207396F3224AB390008ADD4B /* Result.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207396F1224AB390008ADD4B /* Result.cpp */; };
@@ -39,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		202F2D19224BE1C5000D464A /* BackgroundScape.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BackgroundScape.cpp; sourceTree = "<group>"; };
+		202F2D1A224BE1C5000D464A /* BackgroundScape.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BackgroundScape.hpp; sourceTree = "<group>"; };
 		207396E9224AAE11008ADD4B /* GameInfo.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameInfo.hpp; sourceTree = "<group>"; };
 		207396EB224AAF85008ADD4B /* Title.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Title.cpp; sourceTree = "<group>"; };
 		207396EC224AAF85008ADD4B /* Title.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Title.hpp; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 				207396EF224AB249008ADD4B /* Game.hpp */,
 				207396F1224AB390008ADD4B /* Result.cpp */,
 				207396F2224AB390008ADD4B /* Result.hpp */,
+				202F2D19224BE1C5000D464A /* BackgroundScape.cpp */,
+				202F2D1A224BE1C5000D464A /* BackgroundScape.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -368,6 +373,7 @@
 				207396F0224AB249008ADD4B /* Game.cpp in Sources */,
 				207396ED224AAF85008ADD4B /* Title.cpp in Sources */,
 				207396F3224AB390008ADD4B /* Result.cpp in Sources */,
+				202F2D1B224BE1C5000D464A /* BackgroundScape.cpp in Sources */,
 				2C17789A1CE0AA7C00BB8AD0 /* Main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

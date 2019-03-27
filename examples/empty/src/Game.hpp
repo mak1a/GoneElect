@@ -7,6 +7,7 @@
 #pragma once
 
 #include"GameInfo.hpp"
+#include"BackgroundScape.hpp"
 
 ///////////////////////////////////////////////////////////////////////
 //
@@ -15,7 +16,9 @@
 class Game : public MyApp::Scene
 {
 private:
+    Texture mTextureCourt;
     
+    BackgroundScape bgs;
 public:
     
     Game(const InitData& init);

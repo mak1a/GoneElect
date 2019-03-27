@@ -147,7 +147,6 @@ void Main()
     Window::SetTitle(GameInfo::title);
     Graphics::SetBackground(GameInfo::BackgroundColor);
     System::SetExitEvent(WindowEvent::CloseButton);
-    
     //////////////////////////////////////////////////////////////
     //
     //  使用するシーン
