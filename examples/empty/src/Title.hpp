@@ -10,33 +10,6 @@
 
 ///////////////////////////////////////////////////////////////////////
 //
-//  タイトル画面の背景エフェクト
-//
-struct TitleBackGroundEffect : IEffect
-{
-    Line m_line;
-    
-    TitleBackGroundEffect();
-    
-    bool update(double timeSec);
-};
-
-///////////////////////////////////////////////////////////////////////
-//
-//  タイトル画面のメニュー選択時のエフェクト
-//
-struct MenuEffect : IEffect
-{
-    Rect m_rect;
-    
-    MenuEffect(const Rect& rect)
-    : m_rect(rect) {}
-    
-    bool update(double timeSec);
-};
-
-///////////////////////////////////////////////////////////////////////
-//
 //  タイトル画面
 //
 class Title : public MyApp::Scene
@@ -55,8 +28,6 @@ private:
     {
         GameInfo::MenuGameStart,
         GameInfo::MenuScore,
-        GameInfo::MenuCredit,
-        GameInfo::MenuWebURL,
         GameInfo::MenuExit
     };
     
