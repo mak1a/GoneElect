@@ -13,7 +13,9 @@ Result::Result(const InitData& init)
 }
 
 void Result::update() {
-    
+    if ((MouseL | KeyEscape).down()) {
+        changeScene(U"Title");
+    }
 }
 
 void Result::draw() const {
