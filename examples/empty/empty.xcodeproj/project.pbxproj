@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		202F2D1B224BE1C5000D464A /* BackgroundScape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 202F2D19224BE1C5000D464A /* BackgroundScape.cpp */; };
+		202F2D1E224CEFC7000D464A /* Score.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 202F2D1C224CEFC7000D464A /* Score.cpp */; };
+		202F2D21224CF1E2000D464A /* Credit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 202F2D1F224CF1E2000D464A /* Credit.cpp */; };
 		207396ED224AAF85008ADD4B /* Title.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207396EB224AAF85008ADD4B /* Title.cpp */; };
 		207396F0224AB249008ADD4B /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207396EE224AB249008ADD4B /* Game.cpp */; };
 		207396F3224AB390008ADD4B /* Result.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207396F1224AB390008ADD4B /* Result.cpp */; };
@@ -42,6 +44,10 @@
 /* Begin PBXFileReference section */
 		202F2D19224BE1C5000D464A /* BackgroundScape.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BackgroundScape.cpp; sourceTree = "<group>"; };
 		202F2D1A224BE1C5000D464A /* BackgroundScape.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BackgroundScape.hpp; sourceTree = "<group>"; };
+		202F2D1C224CEFC7000D464A /* Score.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Score.cpp; sourceTree = "<group>"; };
+		202F2D1D224CEFC7000D464A /* Score.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Score.hpp; sourceTree = "<group>"; };
+		202F2D1F224CF1E2000D464A /* Credit.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Credit.cpp; sourceTree = "<group>"; };
+		202F2D20224CF1E2000D464A /* Credit.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Credit.hpp; sourceTree = "<group>"; };
 		207396E9224AAE11008ADD4B /* GameInfo.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameInfo.hpp; sourceTree = "<group>"; };
 		207396EB224AAF85008ADD4B /* Title.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Title.cpp; sourceTree = "<group>"; };
 		207396EC224AAF85008ADD4B /* Title.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Title.hpp; sourceTree = "<group>"; };
@@ -177,6 +183,10 @@
 				207396F2224AB390008ADD4B /* Result.hpp */,
 				202F2D19224BE1C5000D464A /* BackgroundScape.cpp */,
 				202F2D1A224BE1C5000D464A /* BackgroundScape.hpp */,
+				202F2D1C224CEFC7000D464A /* Score.cpp */,
+				202F2D1D224CEFC7000D464A /* Score.hpp */,
+				202F2D1F224CF1E2000D464A /* Credit.cpp */,
+				202F2D20224CF1E2000D464A /* Credit.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -370,6 +380,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				202F2D21224CF1E2000D464A /* Credit.cpp in Sources */,
+				202F2D1E224CEFC7000D464A /* Score.cpp in Sources */,
 				207396F0224AB249008ADD4B /* Game.cpp in Sources */,
 				207396ED224AAF85008ADD4B /* Title.cpp in Sources */,
 				207396F3224AB390008ADD4B /* Result.cpp in Sources */,
