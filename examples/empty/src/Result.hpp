@@ -15,7 +15,7 @@
 class Result : public MyApp::Scene
 {
 private:
-    
+    std::array<ScoreData, 5> m_highScores = defaultHighScores;
 public:
     
     Result(const InitData& init);
