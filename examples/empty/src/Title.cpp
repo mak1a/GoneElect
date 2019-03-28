@@ -26,7 +26,7 @@ Title::Title(const InitData& init)
     
     for (auto i : step(m_menuBoxes.size()))
     {
-        m_menuBoxes[i].set(240, 450 + i * 80, boxWidth + 80, 60);
+        m_menuBoxes[i].set(240, static_cast<int>(450 + i * 80), boxWidth + 80, 60);
     }
 }
 
