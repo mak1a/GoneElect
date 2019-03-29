@@ -11,24 +11,16 @@
 
 namespace GameInfo {
     // ゲームのタイトル
-    const String title = U"Biscuit Clicker";
+    const String title = U"作業服の会長";
     
     // ゲームのバージョン（空の文字列も OK）
     const String version = U"Version 1.0";
     
-    // ゲームの Web サイト（無い場合は空の文字列にする）
-    const String WebURL = U"https://www.google.co.jp/";
-    
-    // 結果ツイートの文章（TweetHead + score + TweetTail)
-    const String TweetHead = U"Biscuit Clicker をプレイしたよ。結果: ";
-    
-    const String TweetTail = U" 枚 #BiscuitClicker";
-    
     // ゲームの背景色
-    const ColorF BackgroundColor = ColorF(0.4, 0.7, 0.5);
+    const ColorF BackgroundColor = Palette::Ghostwhite;
     
     // シーン切り替え時のフェードイン・アウトの色
-    const ColorF FadeInColor = ColorF(1.0, 1.0, 1.0);
+    const ColorF FadeInColor = Palette::Black;
     
     // タイトルのフォントサイズ
     const int32 TitleFontSize = 80;

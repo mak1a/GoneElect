@@ -68,7 +68,7 @@ void Game::update() {
     }
     
     for (size_t i = 0; i < flyingHumansPosition.size(); i++) {
-        flyingHumansPosition[i].y -= 40;
+        flyingHumansPosition[i].y -= 20;
         flyingHumansPosition[i].z += 10;
         
         if (flyingHumansPosition[i].y < -100) {
@@ -119,5 +119,5 @@ void Game::draw() const {
     
     const int32 timeLeftMillisec = Max(gameTimeMillisec - m_gameTimer.ms(), 0);
     
-    FontAsset(U"GameTime")(U"TIME: {:0>2}'{:0>2}"_fmt(timeLeftMillisec / 1000, timeLeftMillisec % 1000 / 10)).draw(60, 60);
+    FontAsset(U"GameTime")(U"TIME: {:0>2}'{:0>2}"_fmt(timeLeftMillisec / 1000, timeLeftMillisec % 1000 / 10)).draw(60, 60, Palette::Black);
 }

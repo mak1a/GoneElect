@@ -10,11 +10,6 @@
 Title::Title(const InitData& init)
     : IScene(init)
 {
-    if (!GameInfo::WebURL)
-    {
-        m_menuTexts.erase(m_menuTexts.begin() + 3);
-    }
-    
     m_menuBoxes.resize(m_menuTexts.size());
     
     int32 boxWidth = 0;
@@ -38,14 +33,7 @@ void Title::update() {
         const Quad item = m_menuBoxes[i].shearedX(20);
         
         handCursor |= item.mouseOver();
-        /*
-        if (item.mouseOver() && m_effectMenuItemStopwatch > 300ms)
-        {
-            m_effect.add<MenuEffect>(m_menuBoxes[i]);
-            
-            m_effectMenuItemStopwatch.restart();
-        }
-        */
+        
         if (item.leftClicked())
         {
             if (i == 0)
@@ -76,15 +64,16 @@ void Title::update() {
 }
 
 void Title::draw() const {
-    Graphics2D::SetBlendState(BlendState::Additive);
-    
-    m_effect.update();
+    Window::Resize(1280, 720);
+    Window::SetTitle(GameInfo::title);
+    Graphics::SetBackground(GameInfo::BackgroundColor);
+    System::SetExitEvent(WindowEvent::CloseButton);
     
     Graphics2D::SetBlendState(BlendState::Default);
     
     const double titleHeight = FontAsset(U"Title")(GameInfo::title).region().h;
     
-    FontAsset(U"Title")(GameInfo::title).drawAt(Window::Center().x, titleHeight);
+    FontAsset(U"Title")(GameInfo::title).drawAt(Window::Center().x, titleHeight, Palette::Black);
     
     for (auto i : step(m_menuBoxes.size()))
     {
