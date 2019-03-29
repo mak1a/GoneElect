@@ -8,6 +8,7 @@
 
 #include"GameInfo.hpp"
 #include"BackgroundScape.hpp"
+#include<iostream>
 
 ///////////////////////////////////////////////////////////////////////
 //
@@ -24,7 +25,8 @@ private:
     
     Stopwatch m_gameTimer;
     
-    Array<Texture> mTextureHuman;
+    Array<Texture> mTextureHuman, flyingHumansTexture;
+    Array<Vec3> flyingHumansPosition;
     
     int32 m_score = 0;
     
