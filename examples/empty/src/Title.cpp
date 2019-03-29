@@ -21,7 +21,7 @@ Title::Title(const InitData& init)
     
     for (auto i : step(m_menuBoxes.size()))
     {
-        m_menuBoxes[i].set(240, static_cast<int>(450 + i * 80), boxWidth + 80, 60);
+        m_menuBoxes[i].set(390, static_cast<int>(450 + i * 80), boxWidth + 180, 60);
     }
 }
 
@@ -77,7 +77,7 @@ void Title::draw() const {
     
     for (auto i : step(m_menuBoxes.size()))
     {
-        m_menuBoxes[i].shearedX(20).draw();
+        //m_menuBoxes[i].shearedX(20).draw();
         
         FontAsset(U"Menu")(m_menuTexts[i]).drawAt(m_menuBoxes[i].center(), Color(40));
     }

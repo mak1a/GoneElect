@@ -23,10 +23,10 @@ namespace GameInfo {
     const ColorF FadeInColor = Palette::Black;
     
     // タイトルのフォントサイズ
-    const int32 TitleFontSize = 80;
+    const int32 TitleFontSize = 150;
     
     // メニューのフォントサイズ
-    const int32 MenuFontSize = 30;
+    const int32 MenuFontSize = 40;
     
     // メニュー項目「ゲームスタート」
     const String MenuGameStart = U"ゲームスタート";
