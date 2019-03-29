@@ -41,19 +41,39 @@ void Game::update() {
     }
     
     if (KeyG.down()) {
+        flyingHumansPosition.emplace_back(Window::Center().moveBy(25, 25), 0);
+        flyingHumansTexture.emplace_back(mTextureHuman[4]);
         mTextureHuman.pop_back();
         mTextureHuman.push_front(generateTexture());
         
         if (mTextureHuman[0] == mTextureGone){
             ++m_score;
         }
+        else {
+            --m_score;
+        }
     }
     else if (KeyL.down()) {
+        flyingHumansPosition.emplace_back(Window::Center().moveBy(25, 25), 0);
+        flyingHumansTexture.emplace_back(mTextureHuman[4]);
         mTextureHuman.pop_back();
         mTextureHuman.push_front(generateTexture());
         
         if (mTextureHuman[0] == mTextureLawer){
             ++m_score;
+        }
+        else {
+            --m_score;
+        }
+    }
+    
+    for (size_t i = 0; i < flyingHumansPosition.size(); i++) {
+        flyingHumansPosition[i].y -= 20;
+        flyingHumansPosition[i].z += 10;
+        
+        if (flyingHumansPosition[i].y < -100) {
+            flyingHumansTexture.remove_at(i);
+            flyingHumansPosition.remove_at(i);
         }
     }
     
@@ -92,7 +112,12 @@ void Game::draw() const {
         mTextureHuman[i].drawAt(Window::Center().moveBy(static_cast<int>(i * 5), static_cast<int>(i * 5)));
     }
     
+    for (size_t i = 0; i < flyingHumansPosition.size(); i++) {
+        flyingHumansTexture[i].rotated(ToRadians(flyingHumansPosition[i].z))
+        .drawAt(flyingHumansPosition[i].xy());
+    }
+    
     const int32 timeLeftMillisec = Max(gameTimeMillisec - m_gameTimer.ms(), 0);
     
-    FontAsset(U"GameTime")(U"TIME: {:0>2}'{:0>2}"_fmt(timeLeftMillisec / 1000, timeLeftMillisec % 1000 / 10)).draw(60, 60);
+    FontAsset(U"GameTime")(U"TIME: {:0>2}'{:0>2}"_fmt(timeLeftMillisec / 1000, timeLeftMillisec % 1000 / 10)).draw(60, 60, Palette::Black);
 }

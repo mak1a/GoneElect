@@ -42,5 +42,5 @@ void Result::update() {
 void Result::draw() const {
     const double resultHeight = FontAsset(U"Result")(U"x", getData().lastScore).region().h;
     
-    FontAsset(U"Result")(U"x", getData().lastScore).draw(Window::Center().x + 50, Window::Height() * 0.4 - resultHeight / 2);
+    FontAsset(U"Result")(U"x", getData().lastScore).draw(Window::Center().x + 50, Window::Height() * 0.4 - resultHeight / 2, Palette::Black);
 }
