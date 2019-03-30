@@ -14,11 +14,16 @@ BackgroundScape::BackgroundScape(Texture &_mTextureCourt, Texture &_mTextureRepo
             mReporterPositions.emplace_back(Window::Center().moveBy(-300, static_cast<int>(i * 30 + 30)));
         }
         for (size_t i = 5; i < 10; i++) {
-            mReporterPositions.emplace_back(Window::Center().moveBy(300, static_cast<int>(i * 30 + 30)));
+            mReporterPositions.emplace_back(Window::Center().moveBy(100, static_cast<int>((i - 5) * 30 + 30)));
         }
     }
 
 void BackgroundScape::draw() const {
     mTextureCloud.resized(1280, 400).draw();
     mTextureCourt.resized(700, 400).draw(290, 20);
+    
+    for (auto reporterPosition : mReporterPositions) {
+        mTextureReporter.scaled(0.7)
+        .draw(reporterPosition);
+    }
 }
