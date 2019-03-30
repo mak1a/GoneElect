@@ -10,13 +10,14 @@
 
 class BackgroundScape {
 private:
-    Texture mTextureCourt, mTextureReporter, mTextureCloud;
+    Texture mTextureCourt, mTextureReporter, mTextureCloud, mTextureCar;
     
     RectF mRectLoad;
     
     Array<Vec2> mReporterPositions;
 public:
-    BackgroundScape(Texture &_mTextureCourt, Texture &_mTextureReporter, Texture &_mTextureCloud);
+    BackgroundScape(Texture &_mTextureCourt, Texture &_mTextureReporter,
+                    Texture &_mTextureCloud, Texture &_mTextureCar);
     
     void draw() const;
 };
