@@ -31,6 +31,9 @@ private:
         GameInfo::MenuExit
     };
     
+    Texture mTextureCourt, mTextureCloud;
+    
+    RectF mRectLoad;
 public:
     
     Title(const InitData& init);

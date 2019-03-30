@@ -8,7 +8,8 @@
 #include "Title.hpp"
 
 Title::Title(const InitData& init)
-    : IScene(init)
+    : IScene(init), mTextureCourt(U"texture/saibanjo.png"), mTextureCloud(U"texture/bg_aozora.png"),
+      mRectLoad(Vec2(0, 400), 1280, 320)
 {
     m_menuBoxes.resize(m_menuTexts.size());
     
@@ -68,6 +69,10 @@ void Title::draw() const {
     Window::SetTitle(GameInfo::title);
     Graphics::SetBackground(GameInfo::BackgroundColor);
     System::SetExitEvent(WindowEvent::CloseButton);
+    
+    mTextureCloud.resized(1280, 400).draw();
+    mTextureCourt.resized(700, 400).draw(290, 20);
+    mRectLoad.draw(Palette::Sandybrown);
     
     Graphics2D::SetBlendState(BlendState::Default);
     

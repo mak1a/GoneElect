@@ -8,7 +8,6 @@
 
 #include"GameInfo.hpp"
 #include"BackgroundScape.hpp"
-#include<iostream>
 
 ///////////////////////////////////////////////////////////////////////
 //
@@ -17,7 +16,7 @@
 class Game : public MyApp::Scene
 {
 private:
-    Texture mTextureCourt, mTextureLawer, mTextureGone, mTextureReporter, mTextureCloud;
+    Texture mTextureCourt, mTextureLawer, mTextureGone, mTextureReporter, mTextureCloud, mTextureCar;
     
     static constexpr int32 gameTimeMillisec = 20 * 1000;
     
@@ -25,8 +24,9 @@ private:
     
     Stopwatch m_gameTimer;
     
-    Array<Texture> mTextureHuman, flyingHumansTexture;
+    Array<Texture> mTextureHuman, flyingHumansTexture, ridingHumansTexture;
     Array<Vec3> flyingHumansPosition;
+    Array<Vec2> ridingHumansPosition;
     
     int32 m_score = 0;
     

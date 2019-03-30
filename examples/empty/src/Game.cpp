@@ -10,7 +10,8 @@
 Game::Game(const InitData& init)
     : IScene(init), mTextureCourt(U"texture/saibanjo.png"), mTextureLawer(U"texture/stand_sagyouin_man.png"),
       mTextureGone(U"texture/stand_sagyouin_gone.png"), mTextureReporter(U"texture/job_shinbun_kisya.png"),
-      mTextureCloud(U"texture/bg_aozora.png"), bgs(mTextureCourt, mTextureReporter, mTextureCloud) {
+      mTextureCloud(U"texture/bg_aozora.png"), mTextureCar(U"texture/car_side.png"),
+    bgs(mTextureCourt, mTextureReporter, mTextureCloud, mTextureCar) {
     getData().lastScore = 0;
 }
 
@@ -42,30 +43,32 @@ void Game::update() {
     }
     
     if (KeyG.down()) {
-        flyingHumansPosition.emplace_back(Window::Center().moveBy(25, 25), 0);
-        flyingHumansTexture.emplace_back(mTextureHuman[4]);
-        mTextureHuman.pop_back();
-        mTextureHuman.push_front(generateTexture());
-        
-        if (mTextureHuman[0] == mTextureGone){
+        if (mTextureHuman[4] == mTextureGone){
             ++m_score;
         }
         else {
             --m_score;
         }
+        
+        flyingHumansPosition.emplace_back(Window::Center().moveBy(25, 25), 0);
+        flyingHumansTexture.emplace_back(mTextureHuman[4]);
+        mTextureHuman.pop_back();
+        mTextureHuman.push_front(generateTexture());
+        
     }
     else if (KeyL.down()) {
-        flyingHumansPosition.emplace_back(Window::Center().moveBy(25, 25), 0);
-        flyingHumansTexture.emplace_back(mTextureHuman[4]);
-        mTextureHuman.pop_back();
-        mTextureHuman.push_front(generateTexture());
-        
-        if (mTextureHuman[0] == mTextureLawer){
+        if (mTextureHuman[4] == mTextureLawer){
             ++m_score;
         }
         else {
             --m_score;
         }
+        
+        ridingHumansPosition.emplace_back(Window::Center().moveBy(25, 25));
+        ridingHumansTexture.emplace_back(mTextureHuman[4]);
+        mTextureHuman.pop_back();
+        mTextureHuman.push_front(generateTexture());
+        
     }
     
     for (size_t i = 0; i < flyingHumansPosition.size(); i++) {
@@ -75,6 +78,15 @@ void Game::update() {
         if (flyingHumansPosition[i].y < -100) {
             flyingHumansTexture.remove_at(i);
             flyingHumansPosition.remove_at(i);
+        }
+    }
+    
+    for (size_t i = 0; i < ridingHumansPosition.size(); i++) {
+        ridingHumansPosition[i].x += 50;
+        
+        if (ridingHumansPosition[i].x > 1400) {
+            ridingHumansTexture.remove_at(i);
+            ridingHumansPosition.remove_at(i);
         }
     }
     
@@ -118,6 +130,11 @@ void Game::draw() const {
         flyingHumansTexture[i].scaled(0.7)
         .rotated(ToRadians(flyingHumansPosition[i].z))
         .drawAt(flyingHumansPosition[i].xy());
+    }
+    
+    for (size_t i = 0; i < ridingHumansPosition.size(); i++) {
+        ridingHumansTexture[i].scaled(0.7)
+        .drawAt(ridingHumansPosition[i].xy());
     }
     
     const int32 timeLeftMillisec = Max(gameTimeMillisec - m_gameTimer.ms(), 0);
