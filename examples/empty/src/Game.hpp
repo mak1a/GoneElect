@@ -17,7 +17,7 @@
 class Game : public MyApp::Scene
 {
 private:
-    Texture mTextureCourt, mTextureLawer, mTextureGone;
+    Texture mTextureCourt, mTextureLawer, mTextureGone, mTextureReporter, mTextureCloud;
     
     static constexpr int32 gameTimeMillisec = 20 * 1000;
     

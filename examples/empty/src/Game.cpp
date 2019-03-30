@@ -9,7 +9,8 @@
 
 Game::Game(const InitData& init)
     : IScene(init), mTextureCourt(U"texture/saibanjo.png"), mTextureLawer(U"texture/stand_sagyouin_man.png"),
-      mTextureGone(U"texture/stand_sagyouin_gone.png"), bgs(mTextureCourt) {
+      mTextureGone(U"texture/stand_sagyouin_gone.png"), mTextureReporter(U"texture/job_shinbun_kisya.png"),
+      mTextureCloud(U"texture/bg_aozora.png"), bgs(mTextureCourt, mTextureReporter, mTextureCloud) {
     getData().lastScore = 0;
 }
 
@@ -109,11 +110,13 @@ void Game::draw() const {
     }
     
     for(size_t i = 0; i < mTextureHuman.size(); i++) {
-        mTextureHuman[i].drawAt(Window::Center().moveBy(static_cast<int>(i * 5), static_cast<int>(i * 5)));
+        mTextureHuman[i].scaled(0.7)
+        .drawAt(Window::Center().moveBy(static_cast<int>(i * 5), static_cast<int>(i * 5)));
     }
     
     for (size_t i = 0; i < flyingHumansPosition.size(); i++) {
-        flyingHumansTexture[i].rotated(ToRadians(flyingHumansPosition[i].z))
+        flyingHumansTexture[i].scaled(0.7)
+        .rotated(ToRadians(flyingHumansPosition[i].z))
         .drawAt(flyingHumansPosition[i].xy());
     }
     
