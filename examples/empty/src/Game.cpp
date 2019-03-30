@@ -9,7 +9,8 @@
 
 Game::Game(const InitData& init)
     : IScene(init), mTextureCourt(U"texture/saibanjo.png"), mTextureLawer(U"texture/stand_sagyouin_man.png"),
-      mTextureGone(U"texture/stand_sagyouin_gone.png"), bgs(mTextureCourt) {
+      mTextureGone(U"texture/stand_sagyouin_gone.png"), mTextureReporter(U"texture/job_shinbun_kisya.png"),
+      mTextureCloud(U"texture/bg_aozora.png"), bgs(mTextureCourt, mTextureReporter, mTextureCloud) {
     getData().lastScore = 0;
 }
 
