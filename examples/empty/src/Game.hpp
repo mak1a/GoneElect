@@ -28,7 +28,9 @@ private:
     Array<Vec3> flyingHumansPosition;
     Array<Vec2> ridingHumansPosition;
     
-    int32 m_score = 0;
+    int32 mScore = 0;
+    int32 mScoreWrongGone = 0;
+    int32 mScoreWrongLawer = 0;
     
     BackgroundScape bgs;
     

@@ -37,17 +37,20 @@ void Game::update() {
     
     if (m_gameTimer.ms() >= gameTimeMillisec)
     {
-        getData().lastScore = m_score;
+        getData().lastScore = mScore;
+        getData().wrongGone = mScoreWrongGone;
+        getData().wrongLawer = mScoreWrongLawer;
         
         changeScene(U"Result", 2000);
     }
     
     if (KeyG.down()) {
         if (mTextureHuman[4] == mTextureGone){
-            ++m_score;
+            ++mScore;
         }
         else {
-            --m_score;
+            mScoreWrongGone++;
+            --mScore;
         }
         
         flyingHumansPosition.emplace_back(Window::Center().moveBy(25, 25), 0);
@@ -58,10 +61,11 @@ void Game::update() {
     }
     else if (KeyL.down()) {
         if (mTextureHuman[4] == mTextureLawer){
-            ++m_score;
+            ++mScore;
         }
         else {
-            --m_score;
+            mScoreWrongLawer++;
+            --mScore;
         }
         
         ridingHumansPosition.emplace_back(Window::Center().moveBy(25, 25));

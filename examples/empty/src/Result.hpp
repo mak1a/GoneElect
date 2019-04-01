@@ -16,6 +16,10 @@ class Result : public MyApp::Scene
 {
 private:
     std::array<ScoreData, 5> m_highScores = defaultHighScores;
+    
+    Texture mTextureCourt, mTextureCloud;
+    
+    RectF mRectLoad;
 public:
     
     Result(const InitData& init);

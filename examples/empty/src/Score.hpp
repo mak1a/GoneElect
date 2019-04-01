@@ -18,6 +18,10 @@ private:
     
     std::array<ScoreData, 5> m_highScores = defaultHighScores;
     
+    Texture mTextureCourt, mTextureCloud;
+    
+    RectF mRectLoad;
+    
 public:
     
     Score(const InitData& init);
