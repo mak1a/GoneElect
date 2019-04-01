@@ -64,6 +64,8 @@ namespace GameInfo {
 struct GameData
 {
     int32 lastScore = 0;
+    int32 wrongGone = 0;
+    int32 wrongLawer = 0;
 };
 
 using MyApp = SceneManager<String, GameData>;

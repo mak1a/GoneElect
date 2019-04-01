@@ -31,8 +31,8 @@ void Main()
     FontAsset::Register(U"Menu", GameInfo::MenuFontSize, Typeface::Bold);
     FontAsset::Register(U"Version", 14, Typeface::Regular);
     FontAsset::Register(U"CountDown", 72, Typeface::Bold);
-    FontAsset::Register(U"Result", 80, Typeface::Bold);
-    FontAsset::Register(U"ResultButton", 32, Typeface::Regular);
+    FontAsset::Register(U"Result", 50, Typeface::Bold);
+    FontAsset::Register(U"ResultSupplement", 30, Typeface::Regular);
     FontAsset::Register(U"GameTime", 40, Typeface::Light);
     FontAsset::Register(U"ScoreList", 50, Typeface::Heavy);
     FontAsset::Register(U"ScoreListDate", 25, Typeface::Regular, FontStyle::Italic);

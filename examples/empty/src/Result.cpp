@@ -40,7 +40,14 @@ void Result::update() {
 }
 
 void Result::draw() const {
-    const double resultHeight = FontAsset(U"Result")(U"x", getData().lastScore).region().h;
+    const double resultHeight = FontAsset(U"Result")(U"スコア：", getData().lastScore).region().h;
     
-    FontAsset(U"Result")(U"x", getData().lastScore).draw(Window::Center().x + 50, Window::Height() * 0.4 - resultHeight / 2, Palette::Black);
+    FontAsset(U"Result")(U"スコア").draw(Window::Center().x - 300, Window::Height() * 0.4 - resultHeight / 2, Palette::Black);
+    FontAsset(U"Result")(U":", getData().lastScore).draw(Window::Center().x + 200, Window::Height() * 0.4 - resultHeight / 2, Palette::Black);
+    
+    FontAsset(U"ResultSupplement")(U"(弁護士を会長と間違えた数").draw(Window::Center().x - 200, Window::Height() * 0.4 + resultHeight, Palette::Black);
+    FontAsset(U"ResultSupplement")(U":", getData().wrongGone, U")").draw(Window::Center().x + 200, Window::Height() * 0.4 + resultHeight, Palette::Black);
+    
+    FontAsset(U"ResultSupplement")(U"(会長を弁護士と間違えた数").draw(Window::Center().x - 200, Window::Height() * 0.4 + resultHeight * 2, Palette::Black);
+    FontAsset(U"ResultSupplement")(U":", getData().wrongLawer, U")").draw(Window::Center().x + 200, Window::Height() * 0.4 + resultHeight * 2, Palette::Black);
 }
