@@ -22,6 +22,7 @@ private:
     
     Stopwatch m_stopwatch{ true };
     
+    
     double yOffset() const
     {
         return Window::Height() + 60 - m_stopwatch.ms() / 20.0;
