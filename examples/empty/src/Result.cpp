@@ -8,15 +8,15 @@
 #include "Result.hpp"
 
 Result::Result(const InitData& init)
-: IScene(init), mTextureCourt(U"texture/saibanjo.png"), mTextureCloud(U"texture/bg_aozora.png"),
+: IScene(init), mTextureCourt(Resource(U"texture/saibanjo.png")), mTextureCloud(Resource(U"texture/bg_aozora.png")),
 mRectLoad(Vec2(0, 400), 1280, 320) {
-    if (FileSystem::Exists(GameInfo::SaveFilePath))
+    if (FileSystem::Exists(Resource(GameInfo::SaveFilePath)))
     {
-        Deserializer<BinaryReader>{GameInfo::SaveFilePath}(m_highScores);
+        Deserializer<BinaryReader>{Resource(GameInfo::SaveFilePath)}(m_highScores);
     }
     else
     {
-        Serializer<BinaryWriter>{GameInfo::SaveFilePath}(m_highScores);
+        Serializer<BinaryWriter>{Resource(GameInfo::SaveFilePath)}(m_highScores);
     }
     
     if (m_highScores.back().score <= getData().lastScore)
@@ -28,7 +28,7 @@ mRectLoad(Vec2(0, 400), 1280, 320) {
                       return a.score > b.score ? true : a.score == b.score ? a.date > b.date : false;
                   });
         
-        Serializer<BinaryWriter>{GameInfo::SaveFilePath}(m_highScores);
+        Serializer<BinaryWriter>{Resource(GameInfo::SaveFilePath)}(m_highScores);
     }
 }
 

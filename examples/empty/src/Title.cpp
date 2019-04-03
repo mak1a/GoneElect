@@ -8,7 +8,7 @@
 #include "Title.hpp"
 
 Title::Title(const InitData& init)
-    : IScene(init), mTextureCourt(U"texture/saibanjo.png"), mTextureCloud(U"texture/bg_aozora.png"),
+    : IScene(init), mTextureCourt(Resource(U"texture/saibanjo.png")), mTextureCloud(Resource(U"texture/bg_aozora.png")),
       mRectLoad(Vec2(0, 400), 1280, 320)
 {
     m_menuBoxes.resize(m_menuTexts.size());

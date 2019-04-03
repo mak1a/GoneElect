@@ -8,9 +8,9 @@
 #include "Game.hpp"
 
 Game::Game(const InitData& init)
-    : IScene(init), mTextureCourt(U"texture/saibanjo.png"), mTextureLawer(U"texture/stand_sagyouin_man.png"),
-      mTextureGone(U"texture/stand_sagyouin_gone.png"), mTextureReporter(U"texture/job_shinbun_kisya.png"),
-      mTextureCloud(U"texture/bg_aozora.png"), mTextureCar(U"texture/car_side.png"),
+    : IScene(init), mTextureCourt(Resource(U"texture/saibanjo.png")), mTextureLawer(Resource(U"texture/stand_sagyouin_man.png")),
+      mTextureGone(Resource(U"texture/stand_sagyouin_gone.png")), mTextureReporter(Resource(U"texture/job_shinbun_kisya.png")),
+      mTextureCloud(Resource(U"texture/bg_aozora.png")), mTextureCar(Resource(U"texture/car_side.png")),
     bgs(mTextureCourt, mTextureReporter, mTextureCloud, mTextureCar) {
     getData().lastScore = 0;
 }
