@@ -3,7 +3,6 @@
 #include"Game.hpp"
 #include"Result.hpp"
 #include"Score.hpp"
-#include"Credit.hpp"
 
 ///////////////////////////////////////////////////////////////////////
 //
@@ -21,7 +20,6 @@ void Main()
     manager.add<Game>(U"Game");
     manager.add<Result>(U"Result");
     manager.add<Score>(U"Score");
-    manager.add<Credit>(U"Credit");
     
     //////////////////////////////////////////////////////////////
     //
@@ -36,8 +34,6 @@ void Main()
     FontAsset::Register(U"GameTime", 40, Typeface::Light);
     FontAsset::Register(U"ScoreList", 50, Typeface::Heavy);
     FontAsset::Register(U"ScoreListDate", 25, Typeface::Regular, FontStyle::Italic);
-    FontAsset::Register(U"CreditBig", 32, Typeface::Bold);
-    FontAsset::Register(U"CreditSmall", 28, Typeface::Regular);
     
     //////////////////////////////////////////////////////////////
     //
