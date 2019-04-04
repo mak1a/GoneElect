@@ -3,30 +3,24 @@
 #include"Game.hpp"
 #include"Result.hpp"
 #include"Score.hpp"
-#include"Credit.hpp"
 
-///////////////////////////////////////////////////////////////////////
-//
-//  メイン関数
-//
+
+/**
+ メイン関数
+
+ */
 void Main()
 {
-    //////////////////////////////////////////////////////////////
-    //
-    //  使用するシーン
-    //
+    // 使用するシーン一覧
     MyApp manager;
     manager.setFadeColor(GameInfo::FadeInColor);
     manager.add<Title>(U"Title");
     manager.add<Game>(U"Game");
     manager.add<Result>(U"Result");
     manager.add<Score>(U"Score");
-    manager.add<Credit>(U"Credit");
     
-    //////////////////////////////////////////////////////////////
-    //
-    //  使用するフォント
-    //
+    
+    // 使用するフォント
     FontAsset::Register(U"Title", GameInfo::TitleFontSize, Typeface::Heavy);
     FontAsset::Register(U"Menu", GameInfo::MenuFontSize, Typeface::Bold);
     FontAsset::Register(U"Version", 14, Typeface::Regular);
@@ -36,13 +30,9 @@ void Main()
     FontAsset::Register(U"GameTime", 40, Typeface::Light);
     FontAsset::Register(U"ScoreList", 50, Typeface::Heavy);
     FontAsset::Register(U"ScoreListDate", 25, Typeface::Regular, FontStyle::Italic);
-    FontAsset::Register(U"CreditBig", 32, Typeface::Bold);
-    FontAsset::Register(U"CreditSmall", 28, Typeface::Regular);
     
-    //////////////////////////////////////////////////////////////
-    //
-    //  メインループ
-    //
+    
+    // メインループ
     while (System::Update())
     {
         if (!manager.update())
