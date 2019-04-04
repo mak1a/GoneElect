@@ -4,16 +4,14 @@
 #include"Result.hpp"
 #include"Score.hpp"
 
-///////////////////////////////////////////////////////////////////////
-//
-//  メイン関数
-//
+
+/**
+ メイン関数
+
+ */
 void Main()
 {
-    //////////////////////////////////////////////////////////////
-    //
-    //  使用するシーン
-    //
+    // 使用するシーン一覧
     MyApp manager;
     manager.setFadeColor(GameInfo::FadeInColor);
     manager.add<Title>(U"Title");
@@ -21,10 +19,8 @@ void Main()
     manager.add<Result>(U"Result");
     manager.add<Score>(U"Score");
     
-    //////////////////////////////////////////////////////////////
-    //
-    //  使用するフォント
-    //
+    
+    // 使用するフォント
     FontAsset::Register(U"Title", GameInfo::TitleFontSize, Typeface::Heavy);
     FontAsset::Register(U"Menu", GameInfo::MenuFontSize, Typeface::Bold);
     FontAsset::Register(U"Version", 14, Typeface::Regular);
@@ -35,10 +31,8 @@ void Main()
     FontAsset::Register(U"ScoreList", 50, Typeface::Heavy);
     FontAsset::Register(U"ScoreListDate", 25, Typeface::Regular, FontStyle::Italic);
     
-    //////////////////////////////////////////////////////////////
-    //
-    //  メインループ
-    //
+    
+    // メインループ
     while (System::Update())
     {
         if (!manager.update())

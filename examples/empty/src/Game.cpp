@@ -7,6 +7,12 @@
 
 #include "Game.hpp"
 
+
+/**
+ ゲームクラスの引数付きコンストラクタ
+
+ @param init シーン遷移用の引数
+ */
 Game::Game(const InitData& init)
     : IScene(init), mTextureCourt(Resource(U"texture/saibanjo.png")), mTextureLawer(Resource(U"texture/stand_sagyouin_man.png")),
       mTextureGone(Resource(U"texture/stand_sagyouin_gone.png")), mTextureReporter(Resource(U"texture/job_shinbun_kisya.png")),
@@ -15,16 +21,21 @@ Game::Game(const InitData& init)
     getData().lastScore = 0;
 }
 
+
+/**
+ 毎フレーム呼び出される関数
+ */
 void Game::update() {
+    // ゲームスタートとカウントダウンをしていない場合カウントダウンを始める
     if (!onGame() && !m_countDownTimer.isRunning())
     {
         m_countDownTimer.start();
     }
     
+    // ゲームスタートをしていなくて、カウントダウン3秒過ぎたらゲームスタート
     if (!onGame() && m_countDownTimer >= 3000ms)
     {
         m_gameTimer.start();
-        
         for (size_t i = 0; i < 5; i++) {
             mTextureHuman.emplace_back(generateTexture());
         }
@@ -35,6 +46,7 @@ void Game::update() {
         return;
     }
     
+    // ゲーム終了後、
     if (m_gameTimer.ms() >= gameTimeMillisec)
     {
         getData().lastScore = mScore;
