@@ -1,22 +1,43 @@
+#include"GameInfo.hpp"
+#include"Title.hpp"
+#include"Game.hpp"
+#include"Result.hpp"
+#include"Score.hpp"
 
-# include <Siv3D.hpp> // OpenSiv3D v0.3.1
 
+/**
+ メイン関数
+
+ */
 void Main()
 {
-	Graphics::SetBackground(ColorF(0.8, 0.9, 1.0));
-
-	const Font font(60);
-
-	const Texture textureCat(Emoji(U"🐈"), TextureDesc::Mipped);
-
-	while (System::Update())
-	{
-		font(U"Hello, Siv3D!🐣").drawAt(Window::Center(), Palette::Black);
-
-		font(Cursor::Pos()).draw(20, 500, ColorF(0.6));
-
-		textureCat.resized(80).draw(700, 500);
-
-		Circle(Cursor::Pos(), 60).draw(ColorF(1, 0, 0, 0.5));
-	}
+    // 使用するシーン一覧
+    MyApp manager;
+    manager.setFadeColor(GameInfo::FadeInColor);
+    manager.add<Title>(U"Title");
+    manager.add<Game>(U"Game");
+    manager.add<Result>(U"Result");
+    manager.add<Score>(U"Score");
+    
+    
+    // 使用するフォント
+    FontAsset::Register(U"Title", GameInfo::TitleFontSize, Typeface::Heavy);
+    FontAsset::Register(U"Menu", GameInfo::MenuFontSize, Typeface::Bold);
+    FontAsset::Register(U"Version", 14, Typeface::Regular);
+    FontAsset::Register(U"CountDown", 72, Typeface::Bold);
+    FontAsset::Register(U"Result", 50, Typeface::Bold);
+    FontAsset::Register(U"ResultSupplement", 30, Typeface::Regular);
+    FontAsset::Register(U"GameTime", 40, Typeface::Light);
+    FontAsset::Register(U"ScoreList", 50, Typeface::Heavy);
+    FontAsset::Register(U"ScoreListDate", 25, Typeface::Regular, FontStyle::Italic);
+    
+    
+    // メインループ
+    while (System::Update())
+    {
+        if (!manager.update())
+        {
+            break;
+        }
+    }
 }
