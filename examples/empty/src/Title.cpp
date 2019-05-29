@@ -42,7 +42,7 @@ void Title::update() {
     
     for (auto i : step(m_menuBoxes.size()))
     {
-        const Quad item = m_menuBoxes[i].shearedX(20);
+        const Rect item = m_menuBoxes[i];
         
         handCursor |= item.mouseOver();
         
@@ -98,8 +98,6 @@ void Title::draw() const {
     // 「ゲームスタート」「スコア」「終了する」の３種類
     for (auto i : step(m_menuBoxes.size()))
     {
-        //m_menuBoxes[i].shearedX(20).draw();
-        
         FontAsset(U"Menu")(m_menuTexts[i]).drawAt(m_menuBoxes[i].center(), Color(40));
     }
     

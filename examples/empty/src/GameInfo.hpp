@@ -70,9 +70,9 @@ struct ScoreData
 // デフォルトのハイスコア
 const std::array<ScoreData, 5> defaultHighScores
 {
-    ScoreData{ 50, Date(2018,1,1) },
-    ScoreData{ 40, Date(2018,1,1) },
-    ScoreData{ 30, Date(2018,1,1) },
-    ScoreData{ 20, Date(2018,1,1) },
-    ScoreData{ 10, Date(2018,1,1) },
+    ScoreData{ 0, Date(2018,1,1) },
+    ScoreData{ 0, Date(2018,1,1) },
+    ScoreData{ 0, Date(2018,1,1) },
+    ScoreData{ 0, Date(2018,1,1) },
+    ScoreData{ 0, Date(2018,1,1) },
 };

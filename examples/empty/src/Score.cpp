@@ -30,7 +30,6 @@ void Score::draw() const {
     const int32 h = FontAsset(U"ScoreList").height();
     
     mTextureCloud.resized(1280, 400).draw();
-    // mTextureCourt.resized(700, 400).draw(290, 20);
     mRectLoad.draw(Palette::Sandybrown);
     
     for (auto i : step(m_highScores.size()))
