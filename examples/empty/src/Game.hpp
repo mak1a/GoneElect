@@ -16,43 +16,43 @@
 class Game : public MyApp::Scene
 {
 private:
-    Texture mTextureCourt, mTextureLawer, mTextureGone, mTextureReporter, mTextureCloud, mTextureCar;
+    Texture m_tCourt, m_tLawer, m_tGone, m_tReporter, m_tCloud, m_tCar;
     
     static constexpr int32 gameTimeMillisec = 20 * 1000;
     
-    Stopwatch m_countDownTimer;
+    Stopwatch m_sCountDownTimer;
     
-    Stopwatch m_gameTimer;
+    Stopwatch m_sGameTimer;
     
-    Array<Texture> mTextureHuman, flyingHumansTexture, ridingHumansTexture;
-    Array<Vec3> flyingHumansPosition;
-    Array<Vec2> ridingHumansPosition;
+    Array<Texture> m_TextureHuman, m_TextureFlyingHuman, m_TextureRidingHuman;
+    Array<Vec3> m_FlyingHumanPos;
+    Array<Vec2> m_RidingHumanPos;
     
-    int32 mScore = 0;
-    int32 mScoreWrongGone = 0;
-    int32 mScoreWrongLawer = 0;
+    int32 m_iScore = 0;
+    int32 m_iScoreWrongGone = 0;
+    int32 m_iScoreWrongLawer = 0;
     
-    BackgroundScape bgs;
+    BackgroundScape m_BackGroundScape;
     
     Texture generateTexture() const
     {
         bool randomSetTexture = RandomBool(0.3);
         
         if (randomSetTexture) {
-            return Texture(mTextureGone);
+            return Texture(m_tGone);
         }
         
-        return Texture(mTextureLawer);
+        return Texture(m_tLawer);
     }
     
     bool onCountDown() const
     {
-        return m_countDownTimer.isRunning() && m_countDownTimer < 4000ms;
+        return m_sCountDownTimer.isRunning() && m_sCountDownTimer < 4000ms;
     }
     
     bool onGame() const
     {
-        return m_gameTimer.isRunning();
+        return m_sGameTimer.isRunning();
     }
     
     

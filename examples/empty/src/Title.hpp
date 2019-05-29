@@ -15,25 +15,18 @@
 class Title : public MyApp::Scene
 {
 private:
+    Array<Rect> m_MenuBoxes;
     
-    Effect m_effect;
-    
-    Stopwatch m_effectBackgroundStopwatch{ true };
-    
-    Stopwatch m_effectMenuItemStopwatch{ true };
-    
-    Array<Rect> m_menuBoxes;
-    
-    Array<String> m_menuTexts =
+    Array<String> m_MenuTexts =
     {
         GameInfo::MenuGameStart,
         GameInfo::MenuScore,
         GameInfo::MenuExit
     };
     
-    Texture mTextureCourt, mTextureCloud;
+    Texture m_tCourt, m_tCloud;
     
-    RectF mRectLoad;
+    RectF m_rLoad;
 public:
     
     Title(const InitData& init);
