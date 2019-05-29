@@ -14,22 +14,22 @@
  @param init シーン遷移用の引数
  */
 Title::Title(const InitData& init)
-    : IScene(init), mTextureCourt(Resource(U"texture/saibanjo.png")), mTextureCloud(Resource(U"texture/bg_aozora.png")),
-      mRectLoad(Vec2(0, 400), 1280, 320) {
-    m_menuBoxes.resize(m_menuTexts.size());
+    : IScene(init), m_tCourt(Resource(U"texture/saibanjo.png")), m_tCloud(Resource(U"texture/bg_aozora.png")),
+      m_rLoad(Vec2(0, 400), 1280, 320) {
+    m_MenuBoxes.resize(m_MenuTexts.size());
     
     int32 boxWidth = 0;
     
     // メニューボックスの最大の幅を取得する
-    for (const auto& text : m_menuTexts)
+    for (const auto& text : m_MenuTexts)
     {
         boxWidth = Max(boxWidth, FontAsset(U"Menu")(text).region().w);
     }
     
     // メニューボックスの設置
-    for (auto i : step(m_menuBoxes.size()))
+    for (auto i : step(m_MenuBoxes.size()))
     {
-        m_menuBoxes[i].set(390, static_cast<int>(450 + i * 80), boxWidth + 180, 60);
+        m_MenuBoxes[i].set(390, static_cast<int>(450 + i * 80), boxWidth + 180, 60);
     }
 }
 
@@ -40,9 +40,9 @@ Title::Title(const InitData& init)
 void Title::update() {
     bool handCursor = false;
     
-    for (auto i : step(m_menuBoxes.size()))
+    for (auto i : step(m_MenuBoxes.size()))
     {
-        const Rect item = m_menuBoxes[i];
+        const Rect item = m_MenuBoxes[i];
         
         handCursor |= item.mouseOver();
         
@@ -81,11 +81,11 @@ void Title::draw() const {
     System::SetExitEvent(WindowEvent::CloseButton);
     
     // 雲の描画
-    mTextureCloud.resized(1280, 400).draw();
+    m_tCloud.resized(1280, 400).draw();
     // 裁判所の描画
-    mTextureCourt.resized(700, 400).draw(290, 20);
+    m_tCourt.resized(700, 400).draw(290, 20);
     // 道の描画
-    mRectLoad.draw(Palette::Sandybrown);
+    m_rLoad.draw(Palette::Sandybrown);
     
     Graphics2D::SetBlendState(BlendState::Default);
     
@@ -96,9 +96,9 @@ void Title::draw() const {
     
     // メニューボックスに文字を描画する
     // 「ゲームスタート」「スコア」「終了する」の３種類
-    for (auto i : step(m_menuBoxes.size()))
+    for (auto i : step(m_MenuBoxes.size()))
     {
-        FontAsset(U"Menu")(m_menuTexts[i]).drawAt(m_menuBoxes[i].center(), Color(40));
+        FontAsset(U"Menu")(m_MenuTexts[i]).drawAt(m_MenuBoxes[i].center(), Color(40));
     }
     
     const Size versionSize = FontAsset(U"Version")(GameInfo::version).region().size;

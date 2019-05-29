@@ -7,8 +7,8 @@
 
 #include "Score.hpp"
 Score::Score(const InitData& init)
-: IScene(init), mTextureCourt(Resource(U"texture/saibanjo.png")), mTextureCloud(Resource(U"texture/bg_aozora.png")),
-mRectLoad(Vec2(0, 400), 1280, 320) {
+: IScene(init), m_tCourt(Resource(U"texture/saibanjo.png")), m_tCloud(Resource(U"texture/bg_aozora.png")),
+m_rLoad(Vec2(0, 400), 1280, 320) {
     if (FileSystem::Exists(Resource(GameInfo::SaveFilePath)))
     {
         Deserializer<BinaryReader>{Resource(GameInfo::SaveFilePath)}(m_highScores);
@@ -29,8 +29,8 @@ void Score::update() {
 void Score::draw() const {
     const int32 h = FontAsset(U"ScoreList").height();
     
-    mTextureCloud.resized(1280, 400).draw();
-    mRectLoad.draw(Palette::Sandybrown);
+    m_tCloud.resized(1280, 400).draw();
+    m_rLoad.draw(Palette::Sandybrown);
     
     for (auto i : step(m_highScores.size()))
     {
